@@ -1,6 +1,6 @@
 # 🧭 PathFinder Visualizer
 
-A React-based interactive pathfinding algorithm visualizer.  Through a  visually appealing grid-based interface, see how several pathfinding algorithms, such as Dijkstra's, A*, and BFS, operate in real-time.
+A React-based interactive pathfinding algorithm visualizer.  Through a  visually appealing grid-based interface, see how several pathfinding algorithms, such as Dijkstra's, A*, DFS and BFS, operate in real-time.
 
 ## 📦 Features
 
