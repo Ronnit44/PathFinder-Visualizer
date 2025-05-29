@@ -314,7 +314,7 @@ export default class PathfindingVisualizer extends Component {
           <button
             className={`btn ${isDesktopView ? 'btn-light' : 'btn-dark'}`}
             onClick={this.toggleView}>
-            {isDesktopView ? 'Mobile View' : 'Desktop View'}
+            {isDesktopView ? 'Small View' : 'Large View'}
           </button>
         </div>;
       </div>
