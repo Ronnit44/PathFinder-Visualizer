@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PathFinder-Visualizer/static/css/main.69f62c9c.css",
+    "main.js": "/PathFinder-Visualizer/static/js/main.d040c7e2.js",
+    "index.html": "/PathFinder-Visualizer/index.html",
+    "main.69f62c9c.css.map": "/PathFinder-Visualizer/static/css/main.69f62c9c.css.map",
+    "main.d040c7e2.js.map": "/PathFinder-Visualizer/static/js/main.d040c7e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69f62c9c.css",
+    "static/js/main.d040c7e2.js"
+  ]
+}
