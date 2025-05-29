@@ -1,0 +1,21 @@
+.grid-container {
+  margin: 10% auto;
+}
+
+.grid {
+  white-space: pre;
+}
+
+button {
+  margin: 2px;
+}
+.controls {
+  display: flex;
+  gap: 150px;
+  padding: 15px;
+  background-color: #f8f9fa; 
+  border-bottom: 1px solid #dee2e6;
+  position: absolute;
+  top: 56px; 
+  z-index: 1000;
+}
