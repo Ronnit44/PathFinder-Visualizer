@@ -1,21 +1,154 @@
-.grid-container {
-  margin: 10% auto;
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
-.grid {
-  white-space: pre;
-}
-
-button {
-  margin: 2px;
-}
+/* Controls at the top */
 .controls {
   display: flex;
-  gap: 150px;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
   padding: 15px;
-  background-color: #f8f9fa; 
-  border-bottom: 1px solid #dee2e6;
-  position: absolute;
-  top: 56px; 
-  z-index: 1000;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 10px auto 20px auto;
+  max-width: 95%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Button Styling */
+.controls button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #2196f3, #21cbf3);
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(90deg, #43a047, #66bb6a);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(90deg, #e53935, #ef5350);
+  color: white;
+}
+
+.btn-warning {
+  background: linear-gradient(90deg, #fbc02d, #fdd835);
+  color: black;
+}
+
+.btn-info {
+  background: linear-gradient(90deg, #00acc1, #26c6da);
+  color: white;
+}
+
+/* Grid */
+.grid-container {
+  margin: 20px auto;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Grid Nodes */
+.node {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease-in-out;
+}
+
+.node:hover {
+  transform: scale(1.1);
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.node-start {
+  background-color: #4CAF50;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(76, 175, 80, 0.7);
+}
+
+.node-finish {
+  background-color: #E91E63;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(233, 30, 99, 0.7);
+}
+
+.node-wall {
+  background: repeating-linear-gradient(
+    45deg,
+    #333,
+    #333 5px,
+    #555 5px,
+    #555 10px
+  );
+}
+
+.node-visited {
+  background-color: #64b5f6;
+  animation: visitedAnimation 0.3s ease-in-out;
+}
+
+.node-shortest-path {
+  background-color: #ffeb3b;
+  animation: pathAnimation 0.4s ease-in-out;
+}
+
+/* Animations */
+@keyframes visitedAnimation {
+  0% { transform: scale(0.3); background-color: #90caf9; }
+  100% { transform: scale(1); }
+}
+
+@keyframes pathAnimation {
+  0% { transform: scale(0.5); background-color: #ffee58; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 15px auto;
+  font-size: 14px;
+}
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend span {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
 }

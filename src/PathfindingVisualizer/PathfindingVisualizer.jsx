@@ -135,7 +135,7 @@ export default class PathfindingVisualizer extends Component {
     }
   };
 
-  handleMouseUp = (row, col) => {
+  handleMouseUp = () => {
     if (!this.state.isRunning) {
       this.setState({
         mouseIsPressed: false,
@@ -274,9 +274,29 @@ export default class PathfindingVisualizer extends Component {
     const { grid, mouseIsPressed, isDesktopView } = this.state;
     return (
       <div>
-        <nav className="navbar navbar-dark bg-dark">
-          <span className="navbar-brand"><b>PathFinding Visualizer</b></span>
+        <nav className="navbar">
+          <span className="navbar-brand"><b>✨ PathFinding Visualizer ✨</b></span>
         </nav>
+        <div className="controls">
+          <button className="btn btn-danger" onClick={this.clearGrid}>Clear Grid</button>
+          <button className="btn btn-warning" onClick={this.clearWalls}>Clear Walls</button>
+          <button className="btn btn-primary" onClick={() => this.visualize('Dijkstra')}>Dijkstra's</button>
+          <button className="btn btn-success" onClick={() => this.visualize('AStar')}>A*</button>
+          <button className="btn btn-primary" onClick={() => this.visualize('BFS')}>BFS</button>
+          <button className="btn btn-info" onClick={() => this.visualize('DFS')}>DFS</button>
+          <button
+            className={`btn ${isDesktopView ? 'btn-light' : 'btn-dark'}`}
+            onClick={this.toggleView}>
+            {isDesktopView ? 'Small View' : 'Large View'}
+          </button>
+        </div>
+        <div className="legend">
+          <div><span className="node node-start"></span> Start</div>
+          <div><span className="node node-finish"></span> Finish</div>
+          <div><span className="node node-wall"></span> Wall</div>
+          <div><span className="node node-visited"></span> Visited</div>
+          <div><span className="node node-shortest-path"></span> Path</div>
+        </div>
 
         <table className="grid-container" onMouseLeave={this.handleMouseLeave}>
           <tbody>
@@ -304,19 +324,7 @@ export default class PathfindingVisualizer extends Component {
           </tbody>
         </table>
 
-        <div className="controls">
-          <button className="btn btn-danger" onClick={this.clearGrid}>Clear Grid</button>
-          <button className="btn btn-warning" onClick={this.clearWalls}>Clear Walls</button>
-          <button className="btn btn-primary" onClick={() => this.visualize('Dijkstra')}>Dijkstra's</button>
-          <button className="btn btn-success" onClick={() => this.visualize('AStar')}>A*</button>
-          <button className="btn btn-primary" onClick={() => this.visualize('BFS')}>BFS</button>
-          <button className="btn btn-info" onClick={() => this.visualize('DFS')}>DFS</button>
-          <button
-            className={`btn ${isDesktopView ? 'btn-light' : 'btn-dark'}`}
-            onClick={this.toggleView}>
-            {isDesktopView ? 'Small View' : 'Large View'}
-          </button>
-        </div>;
+        
       </div>
     );
   }
@@ -332,7 +340,6 @@ const getNewGridWithWallToggled = (grid, row, col) => {
   return newGrid;
 };
 
-// Backtracking for shortest path
 const getNodesInShortestPathOrder = (finishNode) => {
   const nodesInShortestPathOrder = [];
   let currentNode = finishNode;
